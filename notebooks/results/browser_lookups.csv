@@ -1,0 +1,6 @@
+gene,cell_types_expressing,specificity,differs_PE_vs_control,notes
+FLT1,"Extravillous trophoblast (highest), other trophoblast, blood-vessel cells",a few types,Higher in PE in most trophoblast and vascular clusters,"Agrees with our bulk result; the rise is seen inside cells, not only as a change in cell mix"
+ENG,"Endothelial cells (highest), macrophages, some trophoblast",broad,Higher in PE in many clusters,Too widespread to pin to one cell type from bulk data
+PAPPA2,"Extravillous trophoblast, some syncytiotrophoblast",trophoblast only,Higher in PE in many trophoblast clusters,A trophoblast gene that rises in PE against either control group
+LEP,Syncytiotrophoblast (sparse),one type,Higher in PE in several trophoblast clusters,"Syncytiotrophoblast is poorly captured by single-cell methods, so the signal is faint"
+HLA-G,Extravillous trophoblast only,one type,"Mixed (some clusters up, one down)","Classic marker of extravillous trophoblast; its bulk difference looks like timing or cell mix, not disease"
