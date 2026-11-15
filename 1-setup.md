@@ -1,6 +1,6 @@
 # Step 1: Setup
 
-[![Back](https://img.shields.io/badge/Back-Track_Overview-13deba?style=flat-square)](README.md)
+[![Back](https://img.shields.io/badge/Back-Track_Overview-13deba?style=flat-square)](TRACK01_GUIDE.md)
 [![Next](https://img.shields.io/badge/Next-2_The_Data-0fe995?style=flat-square)](2-the-data.md)
 
 By the end of this page you will have the data on your computer and a notebook that opens without errors. Pick one of the two options below. If you have never set up Python before, we recommend that you use Option A.
@@ -9,7 +9,9 @@ By the end of this page you will have the data on your computer and a notebook t
 
 ## Option A: Google Colab (no installation)
 
-The `integrate-track01-analysis` branch is currently local-only, so it is not available from GitHub/Colab yet. Use Option B to run this branch locally. If you later publish the branch, open its notebook from `sanjnabandaru/track-01` in Colab and run the first cell; it clones that branch and installs the pinned packages.
+1. Open [Google Colab](https://colab.research.google.com) and choose **File > Open notebook > GitHub**.
+2. After these local changes are published, paste `sanjnabandaru/track-01`, pick the `integrate-track01-analysis` branch and open `notebooks/track01_workflow.ipynb` (core) or `notebooks/track01_analysis.ipynb` (optional companion).
+3. Run all cells. The first cell clones this branch and installs the pinned packages from `requirements.txt`.
 
 NOTE: Colab resets when you close it. Download any results or figures you want to keep.
 
@@ -26,7 +28,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Open `notebooks/track01_workflow.ipynb` in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download). The optional advanced analysis is in `notebooks/track01_advanced_analysis.ipynb`.
+Open `notebooks/track01_workflow.ipynb` (the core guided workflow) in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download). The optional advanced companion is `notebooks/track01_analysis.ipynb`.
 
 The R workflow remains available separately in `notebooks/track01_workflow.Rmd`.
 
