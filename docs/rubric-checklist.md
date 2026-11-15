@@ -16,7 +16,7 @@ Where each judging criterion and submission requirement is met.
 
 | Requirement | Location | Status |
 |---|---|---|
-| Reproducible code that runs top to bottom, with a README | `notebooks/track01_workflow.ipynb` (core), `notebooks/track01_analysis.ipynb` (secondary), `README.md`, `requirements.txt` | Rerun after final edits |
+| Reproducible code that runs top to bottom, with a README | `notebooks/track01_analysis.ipynb` (single notebook), `README.md`, `requirements.txt` | Done, rerun from scratch in CPython 3.11.8 |
 | Recorded presentation, 5 minutes or less, unlisted YouTube | Script in `docs/presentation-script.md`; link goes in README | Team to record |
 | Article following the HUDP guide, at least four graphs | `docs/article.md` (10 graphs) | Draft; team review required |
 | Headline visual used in video and article | `figures/headline.png` | Done |

@@ -1,6 +1,6 @@
 # Analysis Plan
 
-Team: [Team Name]. Track 1. This document records the analyses and their outcomes; it is not a preregistration. The core workflow and the exploratory companion use different comparisons, as described below.
+Team: [Team Name]. Track 1. This document records the analyses and their outcomes; it is not a preregistration. Everything below is run by one notebook, `notebooks/track01_analysis.ipynb`.
 
 ## Research Question
 
@@ -38,11 +38,11 @@ We did not use the decidua extension: it comes from the same 27 pregnancies, so 
 4. **Q6, variance partition.** Per-gene linear model of log2 CPM on PE, FGR, fetal sex and weeks (all 30). Partial R squared for each factor.
    - **Outcome:** in the 266 PE genes, PE explains a median 26% of variation and weeks 1%.
 
-5. **Q6, core and secondary comparisons.** The rubric-facing workflow compares 15 PE placentas with 5 spontaneous preterm controls; its two-group fit finds 472 passing genes, while its separate three-group fit finds 532 for the same contrast. The exploratory companion compares PE vs 10 preterm non-PE placentas (5 spontaneous preterm and 5 FGR-only), with `~ fetal_sex + gestational_age + fgr_status + pe_status`. The groups overlap in delivery weeks but are not individually matched. A gene passes at BH adjusted p < 0.05 **and** |log2 fold change| >= 1. The term-vs-spontaneous-preterm control contrast (5 vs 5) also differs in delivery circumstances.
+5. **Q6, main preterm comparison.** PE vs the 10 preterm non-PE placentas (5 spontaneous preterm and 5 FGR-only), with `~ fetal_sex + gestational_age + fgr_status + pe_status`. The groups overlap in delivery weeks but are not individually matched. A gene passes at BH adjusted p < 0.05 **and** |log2 fold change| >= 1. The term-vs-spontaneous-preterm control contrast (5 vs 5) also differs in delivery circumstances.
    - **Outcome:** 190 genes (156 higher, 34 lower). Timing signature: 90 genes, of which 4 overlap the PE list. Fold changes agree with the all-30 no-timing model (r = 0.94).
-   - **Added after comparing with a teammate's parallel analysis:** a noise and power baseline (8 random 5-vs-5 splits of the controls, and 8 draws of 5 PE vs the 5 spontaneous preterm births) and a worst-case term-only decomposition (three-group model, PE vs term split into PE vs preterm plus preterm vs term). **Outcome:** noise 0 to 18 genes, disease 185 to 420, timing 90; term-only median timing part 25%.
+   - **Added after comparing with a teammate's parallel analysis:** a noise and power baseline (20 random 5-vs-5 splits of the controls, and 20 draws of 5 PE vs the 5 spontaneous preterm births), a worst-case term-only decomposition (three-group model, PE vs term split into PE vs preterm plus preterm vs term), and a control-choice overlap check from the same model. **Outcome:** noise 0 to 26 genes, disease 185 to 620, timing 90; term-only median timing part 25%; PE vs term 334 genes and PE vs spontaneous preterm 316, with 164 shared and fold changes r = 0.83 (97% same direction).
 
-6. **Robustness.** Threshold grid; sensitivity models (a) drop flagged or low-QC samples, (b) spontaneous preterm controls only, (c) add maternal age and depth, (d) growth-restriction controls only as a proxy for matching labour and delivery mode; leave-one-out over the 10 preterm controls; 10 label permutations within FGR strata (seed 2026).
+6. **Robustness.** Threshold grid; sensitivity models (a) drop flagged or low-QC samples, (b) spontaneous preterm controls only, (c) add maternal age and depth, (d) growth-restriction controls only as a proxy for matching labour and delivery mode, (e) drop S01, the PCA outlier; leave-one-out over the 10 preterm controls; 10 label permutations within FGR strata (seed 2026).
 
 7. **Q9, cell mix in bulk.** Marker scores per class, PE effect with the same covariates (linear regression, 95% CI).
 

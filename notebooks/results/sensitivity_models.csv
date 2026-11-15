@@ -3,3 +3,4 @@ model,passing,same_direction,still_padj_lt_0_05,lfc_correlation,median_effect_ra
 (b) controls = spontaneous preterm only,291,1.0,0.7,0.9503858104574064,1.2803914225878823
 (c) + maternal age + depth,211,1.0,0.9789473684210527,0.9971999443875326,0.9971275177060799
 (d) controls = growth restriction only,11,1.0,0.037037037037037035,0.9074436934006234,0.7125875434108887
+(e) drop S01 (PCA outlier),178,1.0,0.9,0.9988791399017457,0.9936497602496839

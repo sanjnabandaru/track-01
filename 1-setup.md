@@ -10,7 +10,7 @@ By the end of this page you will have the data on your computer and a notebook t
 ## Option A: Google Colab (no installation)
 
 1. Open [Google Colab](https://colab.research.google.com) and choose **File > Open notebook > GitHub**.
-2. After these local changes are published, paste `sanjnabandaru/track-01`, pick the `integrate-track01-analysis` branch and open `notebooks/track01_workflow.ipynb` (core) or `notebooks/track01_analysis.ipynb` (optional companion).
+2. Paste `sanjnabandaru/track-01`, pick the `integrate-track01-analysis` branch and open `notebooks/track01_analysis.ipynb`.
 3. Run all cells. The first cell clones this branch and installs the pinned packages from `requirements.txt`.
 
 NOTE: Colab resets when you close it. Download any results or figures you want to keep.
@@ -28,9 +28,9 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Open `notebooks/track01_workflow.ipynb` (the core guided workflow) in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download). The optional advanced companion is `notebooks/track01_analysis.ipynb`.
+Open `notebooks/track01_analysis.ipynb` (the team's analysis) in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download).
 
-The R workflow remains available separately in `notebooks/track01_workflow.Rmd`.
+The organizers' R template remains available in `notebooks/track01_workflow.Rmd`; we did not use it.
 
 ### R
 
@@ -59,7 +59,7 @@ Every line should end in `OK`, which means your copy matches the released files 
 
 ## You Are Ready When
 
-- The workflow notebook opens.
+- The analysis notebook opens.
 - The first two code cells run without errors and print the size of each data file.
 
 Stuck? Ask on [Slack](https://join.slack.com/t/openbiodatathon/shared_invite/zt-4fwud5ffn-9CAX0OqyjtwbE0Hlx5QV1A). Setup problems are a common issue and may be quick to fix.

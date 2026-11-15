@@ -27,9 +27,9 @@ We used a public study of 30 placentas collected at delivery ([GSE203507](https:
 
 ### Question 6: comparing delivery timing
 
-**The main comparison.** The core workflow compared 15 PE placentas with 5 spontaneous preterm controls. Its two-group model found 472 genes passing the stated threshold; a separate three-group fit found 532 for the same contrast because it uses a different fit. Delivery weeks overlap but are not individually matched, so timing and other confounding may remain.
+**The comparisons.** Our main comparison sets the 15 PE placentas against the 10 preterm placentas without preeclampsia (5 spontaneous preterm births and 5 with growth restriction only), adjusting for delivery week, growth restriction and fetal sex. Delivery weeks overlap but are not individually matched, so timing and other confounding may remain.
 
-Swapping the controls changes which genes pass more than how many. Against term controls, 532 genes pass too, but only 240 of them are shared with the preterm comparison. Across all genes that pass either comparison, the fold changes still correlate at 0.76 and 95% point the same way, so the overall direction of the preeclampsia signal holds. Dropping the two most unusual preeclampsia samples (S01, an outlier in the PCA, and S12, whose recorded blood pressure never reached 140/90) kept 84% of the genes.
+Does the choice of control group matter? In one model, PE vs term controls gives 334 genes and PE vs spontaneous preterm controls gives 316, but only 164 are on both lists. Across all genes on either list, the fold changes agree well (correlation 0.83, 97% in the same direction), so the direction of the preeclampsia signal holds while the exact gene list shifts.
 
 We also summarized 15,835 filtered genes with principal component analysis (PCA), which places placentas with similar overall gene activity close together.
 
@@ -51,15 +51,15 @@ Across 266 selected genes, adding timing changed the estimated PE effect by a me
 
 Figure 4. For the genes that differ in preeclampsia, how much of their variation each factor explains beyond the others. (Data: GSE203507.)
 
-**A broader preterm model.** As a secondary check, we compared 15 PE placentas with 10 non-PE preterm placentas: 5 spontaneous preterm and 5 FGR-only. The model adjusts for delivery weeks, FGR and fetal sex. The groups overlap in weeks but are not individually matched. We counted a gene as different if it changed at least 2-fold with adjusted p below 0.05.
+**The main preterm model.** We compared the 15 PE placentas with the 10 non-PE preterm placentas, adjusting for delivery weeks, FGR and fetal sex. We counted a gene as different if it changed at least 2-fold with adjusted p below 0.05.
 
 ![Volcano plot. Each dot is a gene; most highlighted genes are on the right, meaning higher in preeclampsia. FLT1, ENG, LEP, HTRA4 and SERPINA3 are labelled.](../figures/fig6_volcano.png)
 
-Figure 5. The secondary adjusted PE-vs-preterm model. Genes to the right are higher in PE; higher points show stronger evidence. 156 genes are higher and 34 lower. (Data: GSE203507.)
+Figure 5. The main adjusted PE-vs-preterm model. Genes to the right are higher in PE; higher points show stronger evidence. 156 genes are higher and 34 lower. (Data: GSE203507.)
 
 This adjusted preterm model found 190 genes. A separate term-vs-spontaneous-preterm control comparison found 90, with 4 shared. The latter contrast may reflect delivery circumstances as well as timing, and overlapping significance lists cannot cleanly divide genes into disease and timing categories.
 
-To explore power, eight random control splits yielded 0 to 18 passing genes, while eight draws of 5 PE versus 5 preterm controls yielded 185 to 420. These small exploratory checks do not rule out missed timing effects.
+To explore power, 20 random splits of the controls yielded 0 to 26 passing genes, while 20 draws of 5 PE versus 5 preterm controls yielded 185 to 620. These small exploratory checks do not rule out missed timing effects.
 
 In an exploratory decomposition of the PE-vs-term contrast, the median timing-related component was 25%. This is model-dependent, not a causal estimate. HLA-G illustrates why the choice of control group matters (Figure 7).
 
@@ -71,7 +71,7 @@ The 156 rising genes overlap most with the standard "hypoxia" gene list, the ala
 
 Figure 6. Biological processes most over-represented among genes higher in preeclampsia. (Data: GSE203507 and MSigDB Hallmark.)
 
-FLT1, the gene behind the sFlt-1 blood test, has an estimated 5.6-fold higher RNA level (95% confidence interval 3.0 to 10.3), ENG 3.9-fold (2.7 to 5.4), and LEP 26-fold (9 to 79), in the secondary preterm model. RNA levels do not directly measure the proteins in blood.
+FLT1, the gene behind the sFlt-1 blood test, has an estimated 5.6-fold higher RNA level (95% confidence interval 3.0 to 10.3), ENG 3.9-fold (2.7 to 5.4), and LEP 26-fold (9 to 79), in the main preterm model. RNA levels do not directly measure the proteins in blood.
 
 ![Four scatter plots showing FLT1, ENG, LEP and HLA-G expression by clinical group and delivery week.](../figures/fig12_key_genes.png)
 
@@ -83,7 +83,7 @@ This fits a long-standing idea: the arteries feeding the placenta do not widen p
 
 ### How sure are we?
 
-When we shuffled the preeclampsia labels at random ten times, almost no genes passed instead of 190. When we left out each control placenta in turn, the result held. When we dropped placentas with odd blood pressure records or poor data quality, used only spontaneous preterm births as controls, or added maternal age and sequencing depth, every gene kept its direction.
+When we shuffled the preeclampsia labels at random ten times, almost no genes passed instead of 190. When we left out each control placenta in turn, the result held. When we dropped S01, the one placenta far from all others in the PCA, 178 genes passed and every gene kept its direction. When we dropped placentas with odd blood pressure records or poor data quality, used only spontaneous preterm births as controls, or added maternal age and sequencing depth, every gene kept its direction.
 
 ![Two bar charts. Left: genes passing when each control placenta is left out. Right: 190 genes with real labels against near zero for ten random shuffles.](../figures/fig8_robustness.png)
 
@@ -120,7 +120,7 @@ The gene browser fits this picture: LEP appears almost only in syncytiotrophobla
 
 ## Conclusions, Limitations and Next Steps
 
-The core comparison finds gene-expression differences between PE and spontaneous-preterm placentas. Secondary analyses suggest a trophoblast-associated hypoxia-response program, but cannot establish how much timing causes the differences or pinpoint their cellular origin.
+PE and preterm placentas without PE differ in gene expression even after adjusting for delivery week, growth restriction and fetal sex. Further analyses suggest a trophoblast-associated hypoxia-response program, but cannot establish how much timing causes the differences or pinpoint their cellular origin.
 
 **Our hypothesis:** in early-onset preeclampsia, syncytiotrophoblast responds to low oxygen through HIF, raising FLT1, ENG, leptin and related genes. This proposed mechanism and its relationship to delivery timing require independent testing.
 

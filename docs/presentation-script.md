@@ -18,19 +18,19 @@ Four speakers (A to D); merge parts for a smaller team. Every member must appear
 
 > Preeclampsia placentas were delivered three weeks earlier on average, and none after 34 weeks.
 >
-> Our core comparison is 15 preeclampsia placentas against 5 spontaneous preterm controls. Their delivery weeks overlap, but are not individually matched. We also explored PCA and adjusted models, including a broader preterm comparison that adds 5 growth-restriction-only controls.
+> Our main comparison is 15 preeclampsia placentas against the 10 preterm placentas without preeclampsia: 5 spontaneous preterm births and 5 with growth restriction only. Their delivery weeks overlap, but are not individually matched.
 >
-> The advanced models adjust for growth restriction and fetal sex; the core fit is unadjusted. A gene counts if it changes at least 2-fold with adjusted p below 0.05. Each pregnancy is one sample. These analyses are exploratory, not preregistered.
+> The model adjusts for delivery week, growth restriction and fetal sex. A gene counts if it changes at least 2-fold with adjusted p below 0.05. Each pregnancy is one sample. These analyses are exploratory, not preregistered.
 
 ## Slide 3, Results for Question 6 (1:45 to 2:45). Speaker C
 
 **On screen:** `fig2_pca.png`, then `fig4_timing_share.png`, then `fig6_volcano.png`.
 
-> The core two-group fit finds 472 passing genes. A separate three-group fit finds 532 for the same contrast; the two fits use different samples to estimate variation.
+> Swapping term controls for spontaneous preterm controls changes the exact gene list, but the fold changes agree, with 97 percent in the same direction.
 >
-> In a secondary analysis of 266 selected genes, adding timing changed the estimated effect by a median of 8 percent with a term indicator, or 2 percent with linear weeks. These are model-dependent summaries, not causal estimates.
+> Across 266 genes, adding timing changed the estimated effect by a median of 8 percent with a term indicator, or 2 percent with linear weeks. These are model-dependent summaries, not causal estimates.
 >
-> The broader adjusted preterm model finds 190 genes. A separate term-versus-preterm control contrast finds 90, with 4 shared. Small groups and differences in delivery circumstances mean we cannot isolate a pure timing effect.
+> The main adjusted model finds 190 genes. A separate term-versus-preterm control contrast finds 90, with 4 shared. Small groups and differences in delivery circumstances mean we cannot isolate a pure timing effect.
 
 ## Slide 4, Results for Question 9 (2:45 to 3:45). Speaker D
 

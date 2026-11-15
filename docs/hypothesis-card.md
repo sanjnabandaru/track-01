@@ -21,7 +21,7 @@ Early-onset preeclampsia forces delivery before 34 weeks, so placentas from affe
 - PE placentas were delivered 3.0 weeks earlier on average, yet the main axis of variation (PC1, 22%) tracks PE (p = 4e-5) and not delivery week (p = 0.14).
 - Across 266 PE genes, adding delivery timing to the model removes a median **8%** of each gene's difference (term vs preterm indicator) or **2%** (weeks as a line). Only 1 gene loses more than half. All keep their direction.
 - In those genes, PE explains a median 26% of variation and delivery week 1% (partial R squared).
-- The core 15-vs-5 PE-vs-spontaneous-preterm two-group fit finds **472 genes**; a distinct three-group fit finds 532 for the same contrast. The secondary adjusted model compares 15 PE with 10 non-PE preterm placentas (including 5 FGR-only) and finds **190 genes** (156 higher, 34 lower). A term-vs-spontaneous-preterm control contrast yields 90 genes, of which 4 overlap; it is not a pure timing effect.
+- The main adjusted model compares 15 PE with 10 non-PE preterm placentas (including 5 FGR-only) and finds **190 genes** (156 higher, 34 lower). Against term controls or spontaneous preterm controls separately, 334 and 316 genes pass, 164 shared, with fold changes r = 0.83. A term-vs-spontaneous-preterm control contrast yields 90 genes, of which 4 overlap; it is not a pure timing effect.
 - An exploratory decomposition of the PE-vs-term contrast gives a median timing-related component of 25%; this estimate depends on model assumptions and is not causal.
 
 **Q9, cell types.**
@@ -29,7 +29,7 @@ Early-onset preeclampsia forces delivery before 34 weeks, so placentas from affe
 - In the single-cell dataset, the bulk "higher" genes show the strongest median increase in **syncytiotrophoblast**: 81% are higher in late-onset PE donors with overlapping delivery weeks (median +0.47 log2), and 96% in early-onset donors. The small-donor subgroup checks are exploratory and do not rule out confounding.
 - Bulk STB marker scores do not show a significant PE effect. This does not exclude differences in cell mixture.
 
-**Key genes (95% CI).** FLT1 5.6x (3.0 to 10.3), ENG 3.9x (2.7 to 5.4), LEP 26x (9 to 79), HTRA4 5.3x (3.0 to 9.5), FSTL3 6.1x (2.9 to 13.0), in the secondary preterm model. Adding timing changes the estimated effects by 6% to 26%; this is not a causal fraction.
+**Key genes (95% CI).** FLT1 5.6x (3.0 to 10.3), ENG 3.9x (2.7 to 5.4), LEP 26x (9 to 79), HTRA4 5.3x (3.0 to 9.5), FSTL3 6.1x (2.9 to 13.0), in the main preterm model. Adding timing changes the estimated effects by 6% to 26%; this is not a causal fraction.
 
 **Program.** The higher genes are enriched for Hallmark hypoxia (19 genes, adjusted p = 6e-13) and glycolysis. A cross-validated hypoxia score, with genes chosen without the placenta being scored, is about **2.5 times higher in PE** (95% CI 1.7 to 3.8). Its delivery-week slope was not significant; that does not prove a lack of timing effect. The score needs independent validation.
 

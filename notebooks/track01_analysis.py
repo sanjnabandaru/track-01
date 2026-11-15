@@ -1,8 +1,8 @@
 # %% [markdown]
 # # How Much of the Preeclampsia Placenta Signal Is Delivery Timing, and Which Cells Carry the Rest?
 #
-# OpenBio 2026 Datathon, Track 1. This notebook runs top to bottom from the released data package (`track-01/data/`).
-# The article combines the core workflow with exploratory results produced here.
+# OpenBio 2026 Datathon, Track 1. This is the team's single analysis notebook. It runs top to bottom from the released
+# data package in `../data/` and produces every number and figure in our article, analysis plan and hypothesis card.
 #
 # **Starter question 6.** How much of the difference between preeclampsia (PE) and control placentas could be explained by
 # when delivery happened?
@@ -23,8 +23,12 @@
 #
 # Runtime: about 15 minutes on a laptop. Set `RUN_SLOW = False` to skip the leave-one-out and permutation loop (about 8 minutes).
 #
-# This exploratory companion complements `track01_workflow.ipynb`, the rubric-facing core analysis. Its adjusted
-# preterm model uses additional FGR-only controls and should not be treated as the same comparison as the core model.
+# **How this maps to the official seven-step workflow:** 1 question (Section 1), 2 load and check (2), 3 explore (3),
+# 4 to 6 choose, run and read the comparisons (4 to 7), 7 connect genes to cell types (8 to 10b). Sections 11 and 12 give
+# the headline and a printed summary of every answer. Several checks were contributed by teammates' parallel analyses:
+# the noise and power check, the term-controls-only comparison, the HLA-G example, the gene-overlap check and the S01
+# outlier check.
+#
 # Setup: Python 3.11.8 and `pip install -r ../requirements.txt`.
 
 # %% [markdown]
@@ -157,6 +161,21 @@ print(f"Mean delivery week: PE {ga_pe:.1f}, all non-PE {ga_np:.1f} (gap {ga_np-g
 print("Fetal sex: %d of 15 PE pregnancies carried a female fetus vs %d of 15 non-PE." %
       ((metadata.query("pe_status=='PE'").fetal_sex == "female").sum(), (metadata.query("pe_status=='no_PE'").fetal_sex == "female").sum()))
 
+# %%
+# When was each placenta delivered? (S26 was published as "38.7" weeks.days; the package reads it as 39.0, term either way)
+fig, ax = plt.subplots(figsize=(8, 3.6))
+order = list(GROUP_STYLE)[::-1]
+for i, g in enumerate(order):
+    idx = metadata.index[metadata.group == g]
+    ax.scatter(metadata.loc[idx, "ga_delivery_weeks"], np.full(len(idx), i) + rng.uniform(-0.15, 0.15, len(idx)), s=60,
+               facecolor=GROUP_STYLE[g]["color"], marker=GROUP_STYLE[g]["marker"], edgecolor="white", zorder=3)
+ax.axvline(37, color=MUTED, ls="--", lw=1)
+ax.text(36.8, len(order) - 0.6, "term starts\nat 37 weeks", fontsize=8.5, color=MUTED, ha="right", va="top")
+ax.set_yticks(range(len(order))); ax.set_yticklabels([f'{GROUP_STYLE[g]["label"]} (n={(metadata.group == g).sum()})' for g in order], fontsize=9)
+ax.set_xlabel("Weeks of pregnancy at delivery")
+ax.set_title("Every Preeclampsia Placenta Was Delivered Preterm")
+fig.tight_layout(); save(fig, "fig1_delivery_timing.png")
+
 # %% [markdown]
 # ## 3. Explore the Samples
 #
@@ -226,6 +245,10 @@ fig.tight_layout(); save(fig, "fig3_pc_audit.png")
 # **Reading.** PC1, the largest pattern (22%), lines up with PE and not with delivery week; term and preterm controls sit
 # together on the left. Delivery week lines up with PC2, together with growth restriction and sequencing depth. Fetal sex
 # sits on PC5. First answer to Q6: the dominant PE pattern is not a timing pattern. The rest of Part B puts a number on it.
+#
+# One PE placenta (S01) sits far to the right of all others on PC1. It lies in the same direction as the other cases, so
+# it looks like an extreme case rather than a broken sample, and we keep it. Section 7 checks that it does not drive the
+# result.
 
 # %% [markdown]
 # ## 4. Q6, Model Comparison on All 30 Placentas
@@ -364,7 +387,7 @@ fig.tight_layout(); save(fig, "fig5_variance_partition.png")
 # %% [markdown]
 # ## 6. Q6, Preterm-Only Adjusted Comparison
 #
-# This secondary model compares 15 PE placentas with 10 non-PE preterm placentas (5 spontaneous preterm and 5 FGR-only),
+# This main model compares 15 PE placentas with 10 non-PE preterm placentas (5 spontaneous preterm and 5 FGR-only),
 # adjusting for weeks, FGR and fetal sex. The groups overlap in delivery weeks but are not individually matched.
 # It supplies the gene list for Parts C to E. The 5 term vs 5 spontaneous-preterm control comparison is a timing-related
 # contrast, not a pure timing effect: delivery circumstances and other differences may also contribute.
@@ -393,15 +416,17 @@ print(f"{len(in_both)} of {len(hits)} timing-matched genes also pass in the all-
 # %% [markdown]
 # ### 6b. Is the small timing signature just a small-sample effect? And what would a term-only study conclude?
 #
-# Two checks contributed by a teammate's parallel analysis:
+# Three checks contributed by teammates' parallel analyses:
 #
-# * **Noise and power baseline.** The timing signature compares 5 vs 5 placentas. We repeat 5-vs-5 tests 8 times each:
+# * **Noise and power baseline.** The timing signature compares 5 vs 5 placentas. We repeat 5-vs-5 tests 20 times each:
 #   (i) the 10 control placentas split at random (no real difference, so this measures noise), and (ii) 5 randomly chosen PE
 #   placentas vs the 5 spontaneous preterm births (a real disease difference at the same sample size). Same design and
 #   thresholds as the timing signature.
 # * **Worst case.** Many studies only have term controls. One model with three groups (PE, spontaneous preterm, term) splits
 #   each gene's PE-vs-term difference exactly into a disease part (PE vs preterm) and a timing part (preterm vs term). For
 #   genes passing PE vs term, we report how much of the difference is the timing part.
+# * **Does the choice of control group change the genes?** From the same model, we compare the genes passing PE vs term
+#   with those passing PE vs spontaneous preterm: how many are shared, and do their fold changes agree?
 
 # %%
 def five_v_five(a_ids, b_ids):
@@ -411,7 +436,7 @@ def five_v_five(a_ids, b_ids):
 iptb_ids = metadata.index[metadata.group == "iPTB"].tolist(); tb_ids = metadata.index[metadata.group == "TB"].tolist()
 pe_ids = metadata.index[metadata.pe_status == "PE"].tolist()
 noise_draws, disease_draws = [], []
-for _ in range(8):
+for _ in range(20):
     split = list(rng.permutation(iptb_ids + tb_ids))
     while set(split[:5]) in (set(iptb_ids), set(tb_ids)):
         split = list(rng.permutation(iptb_ids + tb_ids))
@@ -443,6 +468,17 @@ print(f"Term-only design: {len(wc_hits)} genes pass PE vs term. Median timing pa
       f"{holds.mean():.0%} still pass against spontaneous preterm controls; "
       f"{((~holds) & (timing_part >= 0.5)).mean():.0%} look mostly timing-driven.")
 worst_case_median = timing_part.median()
+
+# Equal-sized gene lists are not the same genes: how much do PE-vs-term and PE-vs-preterm agree?
+a_set, b_set = set(hits_of(pe_term).index), set(hits_of(pe_pre).index)
+union = sorted(a_set | b_set)
+overlap = dict(pe_vs_term=len(a_set), pe_vs_preterm=len(b_set), shared=len(a_set & b_set),
+               lfc_correlation=pe_term.loc[union, "log2FoldChange"].corr(pe_pre.loc[union, "log2FoldChange"]),
+               same_direction=(np.sign(pe_term.loc[union, "log2FoldChange"]) == np.sign(pe_pre.loc[union, "log2FoldChange"])).mean())
+pd.Series(overlap).to_csv(RESULTS_DIR / "q6_control_choice_overlap.csv")
+print(f"PE vs term: {len(a_set)} genes; PE vs spontaneous preterm: {len(b_set)}; shared: {len(a_set & b_set)}. "
+      f"Across {len(union)} genes passing either: fold-change r = {overlap['lfc_correlation']:.2f}, "
+      f"same direction {overlap['same_direction']:.0%}.")
 
 # %%
 grid = pd.DataFrame({f"|LFC|>={l}": [len(hits_of(primary, p, l)) for p in (0.01, 0.05, 0.1)] for l in (0, 0.58, 1, 2)},
@@ -534,6 +570,7 @@ fig.tight_layout(); save(fig, "fig7_pathways.png")
 # * **(d)** controls = growth restriction only. Spontaneous preterm births are usually laboured vaginal deliveries, while PE
 #   and FGR deliveries are mostly pre-labour caesareans. Labour is not recorded in the bulk data, so comparing PE with FGR
 #   placentas is our best available proxy for matching on labour and delivery mode.
+# * **(e)** drop S01, the PE placenta that sits far from all others on PC1.
 # * Leave-one-out over the 10 preterm non-PE controls, and 10 label permutations within FGR strata.
 
 # %%
@@ -548,6 +585,7 @@ meta_c = metadata.copy(); meta_c["age_c"] = meta_c.maternal_age_years - meta_c.m
 meta_c["depth_c"] = np.log2(meta_c.library_M) - np.log2(meta_c.library_M).mean()
 sens["(c) + maternal age + depth"] = run_deseq(preterm, "~fetal_sex + ga_c + age_c + depth_c + fgr_status + pe_status", PE_C, meta=meta_c)
 sens["(d) controls = growth restriction only"] = run_deseq(metadata.index[metadata.group.isin(["EOPE", "EOPE+FGR", "FGR"])], DESIGN, PE_C)
+sens["(e) drop S01 (PCA outlier)"] = run_deseq(preterm.drop("S01_VT"), DESIGN, PE_C)
 rows = []
 for k, r in sens.items():
     r.to_csv(RESULTS_DIR / f"de_sensitivity_{k[1]}.csv")
@@ -923,6 +961,8 @@ print(f"  - Timing-matched comparison: {len(hits)} genes; overlap with the deliv
 print(f"  - Timing signature {len(h_ga)} genes vs random control splits {min(noise_draws)} to {max(noise_draws)} and 5 PE vs 5 preterm "
       f"{min(disease_draws)} to {max(disease_draws)}.")
 print(f"  - Worst case (term controls only): median timing part {worst_case_median:.0%} of each PE-vs-term difference.")
+print(f"  - Control choice: PE vs term {overlap['pe_vs_term']} genes, PE vs spontaneous preterm {overlap['pe_vs_preterm']}, shared {overlap['shared']}; "
+      f"fold-change r = {overlap['lfc_correlation']:.2f}, same direction {overlap['same_direction']:.0%}.")
 print("Q9. Broad or concentrated?")
 print(f"  - Median tau: higher-in-PE {spec.iloc[0].median_tau:.2f} vs matched random {spec.iloc[0].null_median_tau:.2f} (p = {spec.iloc[0].empirical_p:.3f}); "
       f"all expressed {spec.iloc[3].median_tau:.2f}.")
