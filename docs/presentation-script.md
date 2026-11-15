@@ -1,57 +1,23 @@
-# Presentation Script (5 minutes)
+# Presentation Script (five minutes maximum)
 
-Four speakers (A to D); merge parts for a smaller team. Every member must appear or speak at least once. Rehearse to about 4:45. Show `figures/headline.png` at the start and the end.
+Assign parts so **every team member appears or speaks**. Rehearse with the actual team and check the recording length. Use `figures/headline.png` both here and in the article.
 
-## Slide 1, Introduction (0:00 to 0:45). Speaker A
+## 0:00–0:45 — Question
 
-**On screen:** title, headline graph.
+Preeclampsia often leads to early delivery. When we compare placentas, differences could reflect the disease, delivery timing, or other features of the pregnancies. We asked how the choice of preterm versus term controls changes the differences we observe.
 
-> Preeclampsia is dangerously high blood pressure in pregnancy, and it is thought to start in the placenta. In its early form, the only cure is delivery, often of a very premature baby.
->
-> That creates a trap for anyone studying these placentas: they are also younger. So we asked two of the starter questions. Question 6: how much of the preeclampsia signal is just delivery timing? Question 9: are the genes that remain spread across the placenta, or concentrated in particular cells?
->
-> We used 30 placentas from GSE203507, single-cell data from 26 donors, and the Zeisel gene browser.
+## 0:45–1:45 — Data and methods
 
-## Slide 2, Methodology (0:45 to 1:45). Speaker B
+We used the released GSE203507 villous-tissue data: 15 early-onset preeclampsia placentas and 5 spontaneous-preterm controls in the primary comparison, plus other control groups for exploratory analyses. Each pregnancy counts once. The preterm groups have overlapping delivery weeks, but are not individually matched. We used PyDESeq2 and required a twofold difference and adjusted p below 0.05.
 
-**On screen:** a timeline of delivery weeks by group (or `fig3_pc_audit.png`), then a sketch: "fold change without timing vs with timing".
+## 1:45–3:30 — Results
 
-> Preeclampsia placentas were delivered three weeks earlier on average, and none after 34 weeks.
->
-> Our main comparison is 15 preeclampsia placentas against the 10 preterm placentas without preeclampsia: 5 spontaneous preterm births and 5 with growth restriction only. Their delivery weeks overlap, but are not individually matched.
->
-> The model adjusts for delivery week, growth restriction and fetal sex. A gene counts if it changes at least 2-fold with adjusted p below 0.05. Each pregnancy is one sample. These analyses are exploratory, not preregistered.
+Show the headline image, delivery-week graph, PCA and volcano plot. Explain what each axis and point means. The primary comparison finds gene-expression differences against preterm controls. Other comparisons and seeded five-versus-five draws show how control choice affects results, but do not isolate timing from other delivery circumstances. Explain the numerical results directly from the final notebook.
 
-## Slide 3, Results for Question 6 (1:45 to 2:45). Speaker C
+## 3:30–4:45 — Hypothesis and limits
 
-**On screen:** `fig2_pca.png`, then `fig4_timing_share.png`, then `fig6_volcano.png`.
+Our hypothesis is that some differences, including higher FLT1 RNA, will replicate in a larger study with well-characterized preterm controls. This dataset has few controls, bulk tissue mixes cell types, and samples were collected at delivery. We cannot infer cause or a causal fraction due to timing. A follow-up should record gestational age, labour and delivery mode and measure RNA and protein separately.
 
-> Swapping term controls for spontaneous preterm controls changes the exact gene list, but the fold changes agree, with 97 percent in the same direction.
->
-> Across 266 genes, adding timing changed the estimated effect by a median of 8 percent with a term indicator, or 2 percent with linear weeks. These are model-dependent summaries, not causal estimates.
->
-> The main adjusted model finds 190 genes. A separate term-versus-preterm control contrast finds 90, with 4 shared. Small groups and differences in delivery circumstances mean we cannot isolate a pure timing effect.
+## Final slide
 
-## Slide 4, Results for Question 9 (2:45 to 3:45). Speaker D
-
-**On screen:** `fig9_specificity.png`, `fig10_within_celltype.png`, a browser screenshot of LEP labelled "qualitative context", then `fig7_pathways.png`.
-
-> In healthy placenta, these genes are concentrated, not broad: specificity 0.69 versus 0.31 for matched random genes. 70 of 116 peak in trophoblast, against 30 percent of all genes.
->
-> Donor-level analyses suggest a signal in syncytiotrophoblast, the cell layer bathed in the mother's blood. The donor groups are small and have overlapping, not individually matched, delivery weeks.
->
-> Hypoxia-response genes are enriched. Our cross-validated headline score is about 2.5 times higher in preeclampsia in this dataset, but needs testing in an independent cohort.
-
-## Slide 5, Discussion (3:45 to 5:00). Speaker A, or each member one line
-
-**On screen:** hypothesis in one sentence; three limitations; three next steps.
-
-> Our hypothesis is that, in early preeclampsia, syncytiotrophoblast responds to low oxygen through HIF, raising FLT1, ENG and leptin. We cannot yet establish that mechanism or exclude delivery timing.
->
-> Limits: 15 versus 10 placentas; timing modelled as a line and a switch; labour and medications not recorded in the main study; association, not cause.
->
-> To test it: rerun the score in a larger cohort that records delivery mode; stain tissue for FLT1 and leptin with trophoblast markers; and grow placental cells at low oxygen with HIF blocked. If blocking HIF does not stop FLT1 and leptin from rising, we are wrong.
-
-## Final Slide
-
-Team names; data sources (GSE203507; Admati, Skarbianskis et al., Figshare 23264102; Zeisel lab gene browser; MSigDB Hallmark); repository link.
+List every team member, data sources, repository link and acknowledgements. Verify browser observations before presenting them.

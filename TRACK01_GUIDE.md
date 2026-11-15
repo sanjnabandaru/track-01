@@ -38,11 +38,11 @@ There is no one correct answer. Careful reasoning and honest limits are more imp
    Hypothesis  <-  Look up cell types  <-  Read the results  <-  Run the test
 ```
 
-The [analysis workflow](3-workflow.md) walks through each box. The team's [single Q6/Q9 notebook](notebooks/track01_analysis.ipynb) maps those steps to its own sections and includes timing-adjusted, robustness, and cell-type analyses.
+The [analysis workflow](3-workflow.md) walks through each box. The team's [workflow notebook](notebooks/track01_workflow.ipynb) follows these steps and adds exploratory comparisons and robustness checks.
 
-The primary model compares 15 PE placentas with 10 non-PE preterm placentas, including five FGR-only controls, and adjusts for delivery week, FGR, and fetal sex. A separate analysis compares PE with spontaneous preterm and term controls.
+The primary model compares 15 PE placentas with 5 spontaneous-preterm controls. Separate exploratory fits compare term and preterm controls and examine potential confounders.
 
-For reproducible local runs, use CPython 3.11.8 and install the pinned packages in [`requirements.txt`](requirements.txt). The notebook reads qualitative browser lookups from [`notebooks/inputs/track01_browser_lookups.csv`](notebooks/inputs/track01_browser_lookups.csv). This analysis input is kept outside the released data package; the lookups are context, not independent statistical validation.
+For reproducible local runs, use CPython 3.11.8 and install the pinned packages in [`requirements.txt`](requirements.txt). The notebook records qualitative browser notes in `notebooks/results/browser_lookups.csv`; the team must verify them before submission. Browser lookups are context, not independent statistical validation.
 
 ## Ground Rules and Notes
 

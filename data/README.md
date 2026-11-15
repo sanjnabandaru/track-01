@@ -16,7 +16,7 @@ Every file is stored in this folder, so there is nothing to request or unlock.
 | Everything at once | [Download the repository as a ZIP](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/archive/refs/heads/main.zip), unzip it and open `track-01/data` |
 | With git | `git clone https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026.git` |
 | One file | Click a **Download** link in the tables below. If the file opens as text in your browser, right-click the link and choose **Save link as** |
-| Google Colab | Run the first cell of the [analysis notebook](../notebooks/track01_analysis.ipynb). It fetches the repository for you |
+| Google Colab | Run the first cell of the [workflow notebook](../notebooks/track01_workflow.ipynb). It fetches the repository for you |
 
 To load a file straight from GitHub in Python:
 

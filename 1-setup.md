@@ -10,7 +10,7 @@ By the end of this page you will have the data on your computer and a notebook t
 ## Option A: Google Colab (no installation)
 
 1. Open [Google Colab](https://colab.research.google.com) and choose **File > Open notebook > GitHub**.
-2. Paste `sanjnabandaru/track-01`, pick the `integrate-track01-analysis` branch and open `notebooks/track01_analysis.ipynb`.
+2. Paste `sanjnabandaru/track-01`, pick the `main` branch and open `notebooks/track01_workflow.ipynb`.
 3. Run all cells. The first cell clones this branch and installs the pinned packages from `requirements.txt`.
 
 NOTE: Colab resets when you close it. Download any results or figures you want to keep.
@@ -28,7 +28,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Open `notebooks/track01_analysis.ipynb` (the team's analysis) in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download).
+Open `notebooks/track01_workflow.ipynb` (the team's analysis) in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download).
 
 The organizers' R template remains available in `notebooks/track01_workflow.Rmd`; we did not use it.
 

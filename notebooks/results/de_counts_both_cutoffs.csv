@@ -1,0 +1,5 @@
+,|log2FC| >= 1.0,|log2FC| >= 0.5
+PE vs all controls (naive),582,1849
+PE vs term controls,532,1348
+PE vs preterm controls,532,1463
+Preterm vs term controls,11,15

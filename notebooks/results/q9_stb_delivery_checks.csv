@@ -1,4 +1,0 @@
-subset,cell_class,onset,n_pe,n_ctrl,genes_expressed,frac_higher_in_pe,median_log2_diff,null_p
-"Late onset, all donors",syncytiotrophoblast,late,7,6,64,0.8125,0.4711454742307841,0.001996007984031936
-"Late onset, caesarean only",syncytiotrophoblast,late,6,4,62,0.8064516129032258,0.5567663635745861,0.001996007984031936
-"Late onset, no magnesium sulfate",syncytiotrophoblast,late,4,6,61,0.819672131147541,0.42807150714264486,0.001996007984031936

@@ -25,7 +25,7 @@ OpenBio 2026 Datathon, Track 1: Maternal-Fetal Cell Communication in Preeclampsi
 
 1. The data package is in [`track-01/data`](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/tree/main/track-01/data) of the datathon repository. On Colab the first notebook cell downloads it.
 2. Install packages by following [Track 1 Setup](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/track-01/1-setup.md).
-3. Run `notebooks/track01_analysis.ipynb` top to bottom.
+3. Run `notebooks/track01_workflow.ipynb` top to bottom.
 
 Reproducibility details:
 

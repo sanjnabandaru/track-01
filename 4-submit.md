@@ -1,8 +1,8 @@
 # Step 4: Submit
 
 [![Back](https://img.shields.io/badge/Back-3_Workflow-13deba?style=flat-square)](3-workflow.md)
-[![Rubric](https://img.shields.io/badge/Docs-Judging_Rubric-0fe995?style=flat-square)](../docs/rubric.md)
-[![How to Submit](https://img.shields.io/badge/Docs-How_to_Submit-13deba?style=flat-square)](../submissions/README.md)
+[![Rubric](https://img.shields.io/badge/Docs-Judging_Rubric-0fe995?style=flat-square)](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/docs/rubric.md)
+[![How to Submit](https://img.shields.io/badge/Docs-How_to_Submit-13deba?style=flat-square)](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/submissions/README.md)
 
 Both tracks hand in the same four deliverables. This page covers what each one needs for Track 1.
 
@@ -27,7 +27,7 @@ The [limitations page](reference/limitations.md) lists what this kind of data ca
 |---|---|---|
 | 1 | Reproducible code that runs top to bottom, with a README | `README.md` and `notebooks/` |
 | 2 | A recorded presentation of five minutes or less | Unlisted YouTube video, linked in your README |
-| 3 | A written science communication article about your work, following the [HUDP article guide](../docs/article-guide.md), with at least four graphs | `docs/article.md` and `figures/` |
+| 3 | A written science communication article about your work, following the [HUDP article guide](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/docs/article-guide.md), with at least four graphs | `docs/article.md` and `figures/` |
 | 4 | One headline visual showing your single most important finding to a non-specialist, used in both the video and the article | `figures/headline.png` |
 
 Track 1 also asks for two working documents: the [analysis plan](templates/analysis-plan.md) you filled in during Step 3 and one [hypothesis card](templates/hypothesis-card.md) per team.
@@ -39,7 +39,7 @@ Judges will rerun your notebook top to bottom from the provided files. Make a fo
 | Item | Template | Purpose |
 |---|---|---|
 | `README.md` | [team-readme.md](templates/team-readme.md) | Team name and members, research question, video link and how to run the code |
-| `notebooks/` | Your [analysis notebook](notebooks/track01_analysis.ipynb) | The analysis itself. An R Markdown file or a script also works |
+| `notebooks/` | Your [analysis notebook](notebooks/track01_workflow.ipynb) | The analysis itself. An R Markdown file or a script also works |
 | `figures/` | | Exported graphs as PNG, including your headline visual |
 | `docs/article.md` | [article.md](templates/article.md) | Your science communication article |
 | `docs/analysis-plan.md` | [analysis-plan.md](templates/analysis-plan.md) | The plan you filled in during Step 3 |
@@ -48,7 +48,7 @@ Judges will rerun your notebook top to bottom from the provided files. Make a fo
 Before you submit:
 
 - Restart the notebook and run all cells from the top. Fix anything that breaks.
-- On Colab, save the notebook with **File > Download > Download .ipynb**. Your graphs are in the file panel on the left, under `openbio-datathon-2026/track-01/notebooks/results`. Right-click each one to download it.
+- On Colab, save the notebook with **File > Download > Download .ipynb**. Your graphs are in the file panel on the left, under `track-01/notebooks/results`. Right-click each one to download it.
 - Fill in every section of the README and cite every dataset you used ([citations](reference/citations.md)).
 
 ## 2. Recorded Presentation
@@ -62,13 +62,13 @@ One recording, five minutes at most. Every team member must appear or speak at l
 | Results | 1:45 to 3:45 | Graphs, including your PCA and volcano plots where they fit. Samples per group, how many genes passed, what the gene browser showed |
 | Discussion | 3:45 to 5:00 | Your hypothesis, your limitations and a follow-up experiment or analysis that could test it |
 
-**Upload:** put the recording on YouTube as an unlisted video and paste the link into your README. The [upload steps](../submissions/README.md#upload-your-video) take a few minutes.
+**Upload:** put the recording on YouTube as an unlisted video and paste the link into your README. The [upload steps](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/submissions/README.md#upload-your-video) take a few minutes.
 
 **Slide tips:** put names, dataset sources and the repository link on a final slide or in the video description. Check the audio, and make sure graphs are readable at normal video resolution.
 
 ## 3. Science Communication Article
 
-Write it from the [article template](templates/article.md) and follow the [article guide](../docs/article-guide.md). The guidelines come from the [Harvard Undergraduate Data Project (HUDP)](https://www.hudp.org/). The template already has the guide's outline.
+Write it from the [article template](templates/article.md) and follow the [article guide](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/docs/article-guide.md). The guidelines come from the [Harvard Undergraduate Data Project (HUDP)](https://www.hudp.org/). The template already has the guide's outline.
 
 The main requirements:
 
@@ -124,8 +124,8 @@ Submit before **Sunday, November 15 at 6:00 PM EST**, in one of two ways:
 - **Devpost:** put your folder in a GitHub repository and add its link and your video link to a project on [Devpost](https://openbio-datathon.devpost.com/).
 - **Pull request:** add your folder to `submissions/your-team-name/` in a fork of this repository and open a pull request.
 
-The [submission instructions](../submissions/README.md#how-to-submit) walk through both.
+The [submission instructions](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/submissions/README.md#how-to-submit) walk through both.
 
 ## How You Are Judged
 
-See the [rubric](../docs/rubric.md). Clear reasoning and honest limits score better than a long list of significant genes.
+See the [rubric](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/docs/rubric.md). Clear reasoning and honest limits score better than a long list of significant genes.

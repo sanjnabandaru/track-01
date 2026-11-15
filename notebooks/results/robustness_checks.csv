@@ -1,0 +1,6 @@
+,genes passing,"main genes still significant, same direction",fold-change agreement (correlation)
+no covariate (baseline refit),472,100%,1.0
++ growth restriction,293,59%,0.99
++ fetal sex,426,85%,1.0
++ delivery week,529,92%,0.99
+drop S01 and S12,453,92%,1.0
