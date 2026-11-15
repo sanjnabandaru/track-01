@@ -1,4 +1,4 @@
-# Presentation Script (five minutes maximum)
+# Reads between the Lines: Presentation Script (five minutes maximum)
 
 Assign parts so **every team member appears or speaks**. Rehearse with the actual team and check the recording length. Use `figures/headline.png` both here and in the article.
 

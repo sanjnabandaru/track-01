@@ -4,7 +4,9 @@
 
 ## Team
 
-Team name and members: **[add team name and every member's name and role]**
+Team: **Reads between the Lines**
+
+Members and roles: **[add every member's name and role]**
 
 Presentation: **[add unlisted YouTube link; every team member must appear or speak]**
 
@@ -50,7 +52,7 @@ The main DESeq2 model compares preeclampsia with spontaneous-preterm controls; 4
 
 ## Before submitting
 
-- Add the team name, members, roles, and unlisted video link above and the article byline.
+- Add the members, roles, and unlisted video link above and the article byline.
 - Independently verify the browser observations and review the scientific claims.
 - Use the same `figures/headline.png` in the article and the recording; every team member must appear or speak.
 - Submit on [Devpost](https://openbio-datathon.devpost.com/) or by the [official pull-request route](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/submissions/README.md).

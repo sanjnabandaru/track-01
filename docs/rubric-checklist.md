@@ -11,7 +11,7 @@ The [official rubric](https://github.com/Harvard-Undergraduate-OpenBio/openbio-d
 - [x] Analysis plan and hypothesis card: `docs/analysis-plan.md`, `docs/hypothesis-card.md`
 - [ ] Team reviews the article, hypothesis, numerical claims, and graph labels.
 - [ ] Independently verify the five gene-browser observations; record access details.
-- [ ] Add team name, all names and roles, article byline and acknowledgements.
+- [ ] Add all member names and roles, article byline and acknowledgements.
 - [ ] Record a presentation of five minutes or less with every member appearing or speaking.
 - [ ] Upload it as unlisted on YouTube and add the link to `README.md`; test it in a private window.
 - [ ] Submit the repository and video on Devpost or via the official pull-request route.

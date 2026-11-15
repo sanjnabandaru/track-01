@@ -2,7 +2,7 @@
 
 **Comparing preeclampsia placentas with preterm controls reveals gene-expression differences, but cannot eliminate every effect of delivery timing.**
 
-By [team member names] | OpenBio 2026 Datathon, Track 1
+By Reads between the Lines ([team member names]) | OpenBio 2026 Datathon, Track 1
 
 ![FLT1 expression by delivery week and exploratory counts of genes passing in equal-size comparisons.](../figures/headline.png)
 
