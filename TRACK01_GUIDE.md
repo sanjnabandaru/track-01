@@ -38,13 +38,11 @@ There is no one correct answer. Careful reasoning and honest limits are more imp
    Hypothesis  <-  Look up cell types  <-  Read the results  <-  Run the test
 ```
 
-The [analysis workflow](3-workflow.md) walks through each box, and the [workflow notebook](notebooks/track01_workflow.ipynb) has a matching section for each one.
+The [analysis workflow](3-workflow.md) walks through each box. The team's [single Q6/Q9 notebook](notebooks/track01_analysis.ipynb) maps those steps to its own sections and includes timing-adjusted, robustness, and cell-type analyses.
 
-### Optional Advanced Analysis
+The primary model compares 15 PE placentas with 10 non-PE preterm placentas, including five FGR-only controls, and adjusts for delivery week, FGR, and fetal sex. A separate analysis compares PE with spontaneous preterm and term controls.
 
-The [advanced Q6/Q9 notebook](notebooks/track01_analysis.ipynb) adds timing-adjusted, robustness, and cell-type analyses. It complements rather than replaces the guided workflow: use the workflow notebook's PE-versus-spontaneous-preterm-control comparison as the rubric-facing primary analysis, and interpret the advanced notebook's broader preterm comparison as a secondary analysis because it also includes FGR-only samples.
-
-For reproducible local runs, use CPython 3.11.8 and install the pinned packages in [`requirements.txt`](requirements.txt). Both notebooks read the qualitative browser lookups from [`notebooks/inputs/track01_browser_lookups.csv`](notebooks/inputs/track01_browser_lookups.csv). This analysis input is kept outside the released data package; the lookups are context, not independent statistical validation.
+For reproducible local runs, use CPython 3.11.8 and install the pinned packages in [`requirements.txt`](requirements.txt). The notebook reads qualitative browser lookups from [`notebooks/inputs/track01_browser_lookups.csv`](notebooks/inputs/track01_browser_lookups.csv). This analysis input is kept outside the released data package; the lookups are context, not independent statistical validation.
 
 ## Ground Rules and Notes
 

@@ -21,7 +21,7 @@ Studying these placentas has a built-in trap. Because preeclampsia forces early 
 
 ## The Data and Our Methods
 
-We used a public study of 30 placentas collected at delivery ([GSE203507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203507)): 15 with early preeclampsia (7 also with fetal growth restriction), 5 with growth restriction only, 5 spontaneous preterm births and 5 term births. RNA sequencing measured gene activity in whole tissue. The [core workflow](../notebooks/track01_workflow.ipynb) compares PE with spontaneous preterm controls; the [exploratory companion](../notebooks/track01_analysis.ipynb) also uses FGR-only controls in an adjusted model. We use a second study of 86,752 cells from 26 donors ([Admati, Skarbianskis et al. 2023](https://doi.org/10.1016/j.medj.2023.07.005)) for cell-type context. **Groups are small, tissue was taken at delivery, and labour, delivery method and medications were not recorded in the main study.**
+We used a public study of 30 placentas collected at delivery ([GSE203507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203507)): 15 with early preeclampsia (7 also with fetal growth restriction), 5 with growth restriction only, 5 spontaneous preterm births and 5 term births. RNA sequencing measured gene activity in whole tissue. Our [analysis notebook](../notebooks/track01_analysis.ipynb) compares PE with both preterm control groups in an adjusted model and separately explores the choice of controls. We use a second study of 86,752 cells from 26 donors ([Admati, Skarbianskis et al. 2023](https://doi.org/10.1016/j.medj.2023.07.005)) for cell-type context. **Groups are small, tissue was taken at delivery, and labour, delivery method and medications were not recorded in the main study.**
 
 ## What We Found
 
@@ -83,7 +83,7 @@ This fits a long-standing idea: the arteries feeding the placenta do not widen p
 
 ### How sure are we?
 
-When we shuffled the preeclampsia labels at random ten times, almost no genes passed instead of 190. When we left out each control placenta in turn, the result held. When we dropped S01, the one placenta far from all others in the PCA, 178 genes passed and every gene kept its direction. When we dropped placentas with odd blood pressure records or poor data quality, used only spontaneous preterm births as controls, or added maternal age and sequencing depth, every gene kept its direction.
+When we shuffled the preeclampsia labels at random ten times, almost no genes passed instead of 190. When we left out each control placenta in turn, the result held. When we dropped S01, the one placenta far from all others in the PCA, about 180 genes passed and every gene kept its direction. When we dropped placentas with odd blood pressure records or poor data quality, used only spontaneous preterm births as controls, or added maternal age and sequencing depth, every gene kept its direction.
 
 ![Two bar charts. Left: genes passing when each control placenta is left out. Right: 190 genes with real labels against near zero for ten random shuffles.](../figures/fig8_robustness.png)
 
@@ -105,7 +105,7 @@ The preeclampsia genes are **concentrated, not broad**: median specificity 0.69,
 
 ![Dot plot by cell type. Syncytiotrophoblast shows the largest median rise in both late-onset and early-onset donors.](../figures/fig10_within_celltype.png)
 
-Figure 10. How much our rising genes go up in preeclampsia donors inside each cell type of the single-cell study. Squares: late-onset donors matched on delivery week. Triangles: early-onset donors, only 3 controls, so exploratory. (Data: Admati, Skarbianskis et al.)
+Figure 10. How much our rising genes go up in preeclampsia donors inside each cell type of the single-cell study. Squares: late-onset groups with overlapping delivery weeks, not individually matched. Triangles: early-onset donors, only 3 controls, so exploratory. (Data: Admati, Skarbianskis et al.)
 
 Syncytiotrophoblast tops both exploratory comparisons: 81% of the genes are higher in late-onset preeclampsia and 96% in early-onset. Subset checks for delivery method and magnesium sulfate are limited by small donor numbers. These findings are consistent with a within-cell-type signal but do not exclude cell-mixture effects.
 

@@ -2,9 +2,9 @@
 
 [![Back](https://img.shields.io/badge/Back-2_The_Data-13deba?style=flat-square)](2-the-data.md)
 [![Next](https://img.shields.io/badge/Next-4_Submit-0fe995?style=flat-square)](4-submit.md)
-[![Notebook](https://img.shields.io/badge/Open-Workflow_Notebook-0fe995?style=flat-square)](notebooks/track01_workflow.ipynb)
+[![Notebook](https://img.shields.io/badge/Open-Analysis_Notebook-0fe995?style=flat-square)](notebooks/track01_analysis.ipynb)
 
-Seven steps take you from raw counts to a hypothesis. Each one matches a numbered section in the [workflow notebook](notebooks/track01_workflow.ipynb) ([R version](notebooks/track01_workflow.Rmd)). The notebook does the coding mechanics. Your team makes the decisions, marked **You decide** below.
+Seven steps take you from raw counts to a hypothesis. This guide describes the organizers' [starter workflow notebook](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/track-01/notebooks/track01_workflow.ipynb) ([R version](notebooks/track01_workflow.Rmd)). The team's [analysis notebook](notebooks/track01_analysis.ipynb) maps these steps to its own sections; its code and section numbers differ from the starter. Your team makes the decisions, marked **You decide** below.
 
 Keep a copy of the [analysis plan template](templates/analysis-plan.md) open and fill it in as you go. It becomes part of your submission.
 

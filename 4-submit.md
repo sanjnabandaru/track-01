@@ -39,7 +39,7 @@ Judges will rerun your notebook top to bottom from the provided files. Make a fo
 | Item | Template | Purpose |
 |---|---|---|
 | `README.md` | [team-readme.md](templates/team-readme.md) | Team name and members, research question, video link and how to run the code |
-| `notebooks/` | Your copy of the [workflow notebook](notebooks/track01_workflow.ipynb) | The analysis itself. An R Markdown file or a script also works |
+| `notebooks/` | Your [analysis notebook](notebooks/track01_analysis.ipynb) | The analysis itself. An R Markdown file or a script also works |
 | `figures/` | | Exported graphs as PNG, including your headline visual |
 | `docs/article.md` | [article.md](templates/article.md) | Your science communication article |
 | `docs/analysis-plan.md` | [analysis-plan.md](templates/analysis-plan.md) | The plan you filled in during Step 3 |
