@@ -29,6 +29,8 @@ We used a public study of 30 placentas collected at delivery ([GSE203507](https:
 
 **The main comparison.** The core workflow compared 15 PE placentas with 5 spontaneous preterm controls. Its two-group model found 472 genes passing the stated threshold; a separate three-group fit found 532 for the same contrast because it uses a different fit. Delivery weeks overlap but are not individually matched, so timing and other confounding may remain.
 
+Swapping the controls changes which genes pass more than how many. Against term controls, 532 genes pass too, but only 240 of them are shared with the preterm comparison. Across all genes that pass either comparison, the fold changes still correlate at 0.76 and 95% point the same way, so the overall direction of the preeclampsia signal holds. Dropping the two most unusual preeclampsia samples (S01, an outlier in the PCA, and S12, whose recorded blood pressure never reached 140/90) kept 84% of the genes.
+
 We also summarized 15,835 filtered genes with principal component analysis (PCA), which places placentas with similar overall gene activity close together.
 
 ![Two scatter plots of the same 30 placentas. Left, coloured by group: preeclampsia samples spread to the right while all control groups cluster on the left. Right, shaded by delivery week: no left-to-right gradient.](../figures/fig2_pca.png)
@@ -107,7 +109,7 @@ Figure 10. How much our rising genes go up in preeclampsia donors inside each ce
 
 Syncytiotrophoblast tops both exploratory comparisons: 81% of the genes are higher in late-onset preeclampsia and 96% in early-onset. Subset checks for delivery method and magnesium sulfate are limited by small donor numbers. These findings are consistent with a within-cell-type signal but do not exclude cell-mixture effects.
 
-The gene browser agreed for LEP, which appears almost only in syncytiotrophoblast and is visibly higher in early preeclampsia. FLT1, HTRA4 and PAPPA2 are mostly trophoblast genes. ENG is made by many cell types, so we cannot place it.
+The gene browser fits this picture: LEP appears almost only in syncytiotrophoblast, and FLT1, HTRA4 and PAPPA2 are mostly trophoblast genes. ENG is made by many cell types, so we cannot place it. The browser has no legend for its preeclampsia and control markers, so we used it only to see which cells make each gene, not as evidence of change.
 
 ## Unanswered Questions
 
@@ -139,4 +141,4 @@ No personally identifiable data are included; all datasets are public and de-ide
 
 ## Acknowledgements
 
-Thanks to [teammate name], whose parallel analysis contributed the noise and power check, the term-only comparison and the HLA-G example. Thanks to the Harvard Undergraduate OpenBio organizers for the curated data package and workflow, to the authors of GSE203507 and of the Admati/Skarbianskis single-cell study for sharing their data, to the Zeisel lab for the gene browser, and to the Harvard Undergraduate Data Project for the article guide.
+Thanks to [teammate name], whose parallel analysis contributed the noise and power check, the term-only comparison and the HLA-G example, and to [teammate 3 name] for the gene-overlap and outlier checks and the more careful reading of the gene browser. Thanks to the Harvard Undergraduate OpenBio organizers for the curated data package and workflow, to the authors of GSE203507 and of the Admati/Skarbianskis single-cell study for sharing their data, to the Zeisel lab for the gene browser, and to the Harvard Undergraduate Data Project for the article guide.

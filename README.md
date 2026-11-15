@@ -70,7 +70,7 @@ Reproducibility details:
 
 ## Key Findings
 
-- **Core Q6:** the 15-vs-5 PE-versus-spontaneous-preterm two-group fit finds **472 genes** at the stated threshold. A separate three-group fit finds 532 for the same contrast; the fits estimate dispersion using different samples, so their counts should not be mixed.
+- **Core Q6:** the 15-vs-5 PE-versus-spontaneous-preterm two-group fit finds **472 genes** at the stated threshold. A separate three-group fit finds 532 for the same contrast; the fits estimate dispersion using different samples, so their counts should not be mixed. Swapping in term controls also gives 532 genes but only 240 shared; fold changes still correlate at 0.76, with 95% in the same direction.
 - **Secondary Q6:** adding timing covariates changes the estimated PE effects by a median **8%** (term indicator) or **2%** (linear weeks) among 266 selected genes. These model-dependent changes are not a causal estimate of the fraction due to timing. The adjusted 15-vs-10 preterm model finds **190 genes**; it is not the core comparison.
 - **Exploratory Q9:** among available genes, 70 of 116 PE-up genes peak in a trophoblast class in healthy reference donors. Donor-level pseudobulk analyses suggest a syncytiotrophoblast signal, but small groups and cell mixture limit localization.
 - **Hypothesis:** hypoxia-response genes are enriched and the cross-validated score is about 2.5x higher in PE in this dataset. A non-significant delivery-week slope does not establish that timing has no effect; the proposed mechanism needs independent testing.

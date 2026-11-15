@@ -794,9 +794,9 @@ fig.tight_layout(); save(fig, "fig11_celltype_heatmap.png")
 # ## 10b. Gene Browser Lookups (Zeisel/Admati)
 #
 # Recorded on 14 November 2026 from the [Zeisel/Admati browser](https://storage.googleapis.com/www_zeisellab/PE_web/pe_web_test_v1.html)
-# for seven genes: five higher in PE, one lower (HSD17B1) and one timing gene (HLA-G). The browser marks PE vs control
-# differences per cell, which treats cells as replicates, so we use it as qualitative context only. The same file is read
-# by the workflow notebook.
+# for seven genes: five higher in PE, one lower (HSD17B1) and one timing gene (HLA-G). We record only which cell types
+# express each gene and how specific it is. The browser has no legend for its group markers or significance stars, so we do
+# not read PE vs control direction from it. Qualitative context only; the same file is read by the workflow notebook.
 
 # %%
 browser_lookups = pd.read_csv(Path("inputs/track01_browser_lookups.csv"))
