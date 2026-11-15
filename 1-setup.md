@@ -9,9 +9,7 @@ By the end of this page you will have the data on your computer and a notebook t
 
 ## Option A: Google Colab (no installation)
 
-1. Open [Google Colab](https://colab.research.google.com) and sign in with a Google account.
-2. Choose **File > Open notebook > GitHub**, paste `Harvard-Undergraduate-OpenBio/openbio-datathon-2026` and open `track-01/notebooks/track01_workflow.ipynb`.
-3. Run the first code cell. On Colab it downloads the repository and installs the one extra package the workflow needs.
+The `integrate-track01-analysis` branch is currently local-only, so it is not available from GitHub/Colab yet. Use Option B to run this branch locally. If you later publish the branch, open its notebook from `sanjnabandaru/track-01` in Colab and run the first cell; it clones that branch and installs the pinned packages.
 
 NOTE: Colab resets when you close it. Download any results or figures you want to keep.
 
@@ -19,20 +17,18 @@ NOTE: Colab resets when you close it. Download any results or figures you want t
 
 ### Python
 
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) if you do not have conda.
-2. In a terminal, run:
+For the reproducible Python notebooks in this repository, use CPython 3.11.8 and install the pinned dependencies:
 
-   ```bash
-   git clone https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026.git
-   cd openbio-datathon-2026
-   conda env create -f environment/environment.yml
-   conda activate openbio-datathon-2026
-   jupyter lab
-   ```
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
-3. In Jupyter, open `track-01/notebooks/track01_workflow.ipynb`. You can open the Jupyter Notebook file with [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), in your terminal, [VS Code](https://code.visualstudio.com/Download), etc. 
+Open `notebooks/track01_workflow.ipynb` in [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) or [VS Code](https://code.visualstudio.com/Download). The optional advanced analysis is in `notebooks/track01_advanced_analysis.ipynb`.
 
-No conda? Run `pip install -r environment/requirements.txt` inside a virtual environment instead.
+The R workflow remains available separately in `notebooks/track01_workflow.Rmd`.
 
 ### R
 

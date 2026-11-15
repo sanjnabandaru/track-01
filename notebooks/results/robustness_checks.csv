@@ -1,4 +1,4 @@
 ,genes passing,"main genes still significant, same direction",fold-change agreement (correlation)
-+ growth restriction,293,53%,0.99
-+ fetal sex,426,78%,1.0
-+ delivery week,529,87%,0.99
++ growth restriction,293,52%,0.99
++ fetal sex,426,76%,1.0
++ delivery week,529,86%,0.99

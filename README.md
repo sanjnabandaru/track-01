@@ -40,6 +40,12 @@ There is no one correct answer. Careful reasoning and honest limits are more imp
 
 The [analysis workflow](3-workflow.md) walks through each box, and the [workflow notebook](notebooks/track01_workflow.ipynb) has a matching section for each one.
 
+### Optional Advanced Analysis
+
+The [advanced Q6/Q9 notebook](notebooks/track01_advanced_analysis.ipynb) adds timing-adjusted, robustness, and cell-type analyses. It complements rather than replaces the guided workflow: use the workflow notebook's PE-versus-spontaneous-preterm-control comparison as the rubric-facing primary analysis, and interpret the advanced notebook's broader preterm comparison as a secondary analysis because it also includes FGR-only samples.
+
+For reproducible local runs, use CPython 3.11.8 and install the pinned packages in [`requirements.txt`](requirements.txt). Both notebooks read the qualitative browser lookups from [`notebooks/inputs/track01_browser_lookups.csv`](notebooks/inputs/track01_browser_lookups.csv). This analysis input is kept outside the released data package; the lookups are context, not independent statistical validation.
+
 ## Ground Rules and Notes
 
 - Choosing comparisons and interpreting results is your team's job. Organizers will not suggest gene lists or answers.
